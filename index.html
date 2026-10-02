@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A.JMG TATTOO - Estúdio de Tatuagem</title>
     <link rel="stylesheet" href="style-tattoo.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -12,7 +13,8 @@
             <div class="logo">
                 <h1>A.JMG TATTOO</h1>
             </div>
-            <ul class="nav-menu">
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">☰</button>
+            <ul class="nav-menu" id="menu">
                 <li><a href="#home">Início</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#precos">Preços</a></li>
@@ -59,7 +61,8 @@
                 <div class="price-card">
                     <div class="price-header">
                         <h3>Valor por Hora</h3>
-                        <div class="price">R$ 120,00</div>
+                        <!-- data-valor: o JavaScript lê este número para calcular o orçamento -->
+                        <div class="price" data-valor="120">R$ 120,00</div>
                     </div>
                     <div class="price-details">
                         <ul>
@@ -74,12 +77,26 @@
                         </p>
                     </div>
                 </div>
+
+                <div class="calculator">
+                    <h3>Simule seu orçamento</h3>
+                    <p>Quantas horas você acha que a sessão vai levar?</p>
+                    <div class="calc-controls">
+                        <button type="button" id="menos" aria-label="Diminuir meia hora">−</button>
+                        <input type="number" id="horas" min="0.5" max="12" step="0.5" value="2" aria-label="Horas de sessão">
+                        <button type="button" id="mais" aria-label="Aumentar meia hora">+</button>
+                    </div>
+                    <p class="calc-total">Estimativa: <strong id="total">R$ 240,00</strong></p>
+                    <a id="calc-whatsapp" class="cta-button" href="#contato" target="_blank">Pedir esse orçamento no WhatsApp</a>
+                    <p class="price-note">Valor aproximado. O preço final é confirmado na avaliação prévia.</p>
+                </div>
             </div>
         </section>
 
         <section id="horarios" class="schedule">
             <div class="container">
                 <h2>Horários de Funcionamento</h2>
+                <p class="status" id="status"></p>
                 <div class="schedule-card">
                     <div class="schedule-item">
                         <span class="day">Segunda a Sexta</span>
@@ -106,7 +123,7 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <h3>📱 WhatsApp</h3>
-                        <p><a href="https://wa.me/5511992771350?text=Olá+gostaria+de+fazer+um+agendamendo+de+uma+tatto" target="_blank" >(11) 99177-1350</a></p>
+                        <p><a href="https://wa.me/5511992771350?text=Olá+gostaria+de+fazer+um+agendamento+de+uma+tattoo" target="_blank" >(11) 99277-1350</a></p>
                     </div>
                     <div class="contact-item">
                         <h3>📧 Email</h3>
@@ -127,7 +144,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 A.JMG TATTOO TCC Logistica - Todos os direitos reservados</p>
+            <p>&copy; <span id="ano">2025</span> A.JMG TATTOO TCC Logistica - Todos os direitos reservados</p>
         </div>
     </footer>
 </body>

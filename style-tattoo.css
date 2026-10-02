@@ -16,7 +16,7 @@ body {
     padding: 0 20px;
 }
 
-/* Header */
+
 header {
     background: #1a1a1a;
     color: white;
@@ -59,7 +59,6 @@ nav {
     color: #ff6b35;
 }
 
-/* Hero Section */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23333" width="1200" height="600"/><text x="600" y="300" text-anchor="middle" fill="%23666" font-size="120" font-family="Arial">🎨</text></svg>');
     background-size: cover;
@@ -98,7 +97,7 @@ nav {
     background: #e55a2b;
 }
 
-/* About Section */
+
 .about {
     padding: 80px 0;
     background: #f8f8f8;
@@ -141,7 +140,7 @@ nav {
     font-size: 1.3rem;
 }
 
-/* Pricing Section */
+
 .pricing {
     padding: 80px 0;
     background: white;
@@ -202,7 +201,7 @@ nav {
     font-size: 0.9rem;
 }
 
-/* Schedule Section */
+
 .schedule {
     padding: 80px 0;
     background: #1a1a1a;
@@ -254,7 +253,6 @@ nav {
     color: #ccc;
 }
 
-/* Contact Section */
 .contact {
     padding: 80px 0;
     background: #f8f8f8;
@@ -292,7 +290,7 @@ nav {
     color: #666;
 }
 
-/* Footer */
+
 footer {
     background: #1a1a1a;
     color: white;
@@ -300,7 +298,6 @@ footer {
     padding: 2rem 0;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
         flex-direction: column;
@@ -324,12 +321,12 @@ footer {
     }
 }
 
-/* Smooth scrolling */
+
 html {
     scroll-behavior: smooth;
 }
 
-/* Add padding to sections for fixed header */
+
 section {
     scroll-margin-top: 80px;
 }
@@ -337,4 +334,135 @@ section {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #ff6b35;
+    outline-offset: 3px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 2px solid #ff6b35;
+    color: #ff6b35;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0.2rem 0.7rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-menu a.active {
+    color: #ff6b35;
+    font-weight: bold;
+}
+
+.status {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.status.aberto { color: #4cd964; }
+.status.fechado { color: #ff6b6b; }
+
+
+.calculator {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    background: #1a1a1a;
+    color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.calculator h3 {
+    color: #ff6b35;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.calc-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.calc-controls button {
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+    background: #ff6b35;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.calc-controls button:hover {
+    background: #e55a2b;
+}
+
+.calc-controls input {
+    width: 90px;
+    padding: 0.6rem;
+    font-size: 1.4rem;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid #444;
+    background: #2a2a2a;
+    color: white;
+}
+
+.calc-total {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.calc-total strong {
+    display: block;
+    font-size: 2.5rem;
+    color: #ff6b35;
+}
+
+.calculator .price-note {
+    margin-top: 1.5rem;
+    color: #333;
+    text-align: left;
+}
+
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #1a1a1a;
+        padding: 1rem 20px 1.5rem;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    }
+
+    .nav-menu.open {
+        display: flex;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
 }
